@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Journey ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fireworks"></canvas>
+
+<div class="container">
+
+    <div id="cover">
+        <h1>From Memories to Dreams 💝 Bittoo</h1>
+        <p>⬅ 2025 Memories | 2026 Dreams ➡</p>
+        <div class="choice">
+  <button onclick="open2026()"
+    style="
+      background: radial-gradient(circle at top, #ffd1e8, #ff4f8b);
+      color: white;
+      border: none;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      font-size: 34px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255,79,139,0.6);
+      animation: pulse 2s infinite;
+      backdrop-filter: blur(6px);
+    "
+  >
+    ➡
+  </button>
+</div>
+
+<style>
+@keyframes pulse {
+  0%   { transform: scale(1);   box-shadow: 0 0 25px rgba(255,79,139,0.6); }
+  50%  { transform: scale(1.12); box-shadow: 0 0 45px rgba(255,79,139,0.9); }
+  100% { transform: scale(1);   box-shadow: 0 0 25px rgba(255,79,139,0.6); }
+}
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(to right,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI';
+}
+
+.container{
+    width:90%;
+    max-width:420px;
+}
+
+#cover,.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card{
+    display:none;
+}
+
+.choice button{
+    font-size:22px;
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:15px;
+    background:#ff5e78;
+    color:white;
+}
+
+.slide,.slide2026{
+    display:none;
+}
+
+.slide.active,.slide2026.active{
+    display:block;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.end{
+    margin-top:15px;
+    font-size:18px;
+    color:#ff5e78;
+}
+/* Fireworks canvas */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+    z-index: 1;
+}
+
+/* Card hover animation */
+.card {
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+}
+
+/* 2026 glow effect */
+#year2026 h2 {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { color: #ff5e78; }
+    to { color: #ff1493; }
+}
+
+</style>
+
+    </div>
+
+    <!-- 2025 -->
+    <div id="year2025" class="card">
+        <h2>2025 – Our Memories 💕</h2>
+
+        <div class="slide active">
+            <img src="images/m1.jpg">
+            <p>Every smile started with you 😊</p>
+        </div>
+
+        <div class="slide">
+            <img src="images/m2.jpg">
+            <p>Small moments, big love ❤️</p>
+        </div>
+         <div class="slide">
+            <img src="images/m3.jpg">
+            <p>Every smile here means the world to me 💕</p>
+        </div>
+         <div class="slide">
+            <img src="images/m4.jpg">
+            <p>It was always you, in every little moment ✨</p>
+        </div>
+         <div class="slide">
+            <img src="images/m5.jpg">
+            <p>Simple days, beautiful memories 🌸</p>
+        </div>
+     <div class="slide">
+            <img src="images/m6.jpg">
+            <p>With you, even the ordinary felt special ❤️</p>
+        </div>
+        <div class="slide">
+            <img src="images/m7.jpg">
+            <p>Best year because of you 🙌❤️🌸</p>
+        </div>
+        <div class="choice">
+
+<button onclick="nextSlide()"
+  style="
+    background: linear-gradient(135deg, #2ec4b6, #90dbd1);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(46,196,182,0.35);
+    transition: all 0.3s ease;
+  "
+  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 20px rgba(46,196,182,0.45)'"
+  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(46,196,182,0.35)'"
+>
+  Next Memory ➡
+</button>
+<br><br>
+<button onclick="go2026()"
+  style="
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(123,47,247,0.4);
+    transition: all 0.35s ease;
+  "
+  onmouseover="
+    this.style.transform='translateY(-4px) scale(1.03)';
+    this.style.boxShadow='0 16px 32px rgba(123,47,247,0.55)';
+  "
+  onmouseout="
+    this.style.transform='translateY(0) scale(1)';
+    this.style.boxShadow='0 10px 24px rgba(123,47,247,0.4)';
+  "
+>
+  Go to 2026 ➡✨
+</button>
+</div>
+    </div>
+
+    <!-- 2026 -->
+    <div id="year2026" class="card">
+        <h2>Welcome 2026 🌟</h2>
+
+        <div class="slide2026 active">
+            <img src="images/f1.jpg">
+            <p>New year, New dreams same love 💖</p>
+        </div>
+
+        <div class="slide2026">
+            <img src="images/f2.jpg">
+            <p>More dreams, more us ✨</p>
+        </div>
+
+        <p class="end">No matter the year,<br>it’s always YOU ❤️</p>
+            <div class="choice">
+  <button onclick="open2025()"
+    style="
+      background: linear-gradient(135deg, #ff5f8d, #ff8fb3);
+      color: white;
+      border: none;
+      padding: 14px 26px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 95, 141, 0.35);
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(255,95,141,0.45)'"
+    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255,95,141,0.35)'"
+  >
+    <span>✨ ⬅ A little trip back to our 2025 memories</span>
+  </button>
+</div>
+
+    </div>
+
+</div>
+
+<script>
+let slides2025 = document.querySelectorAll("#year2025 .slide");
+let index = 0;
+
+function open2025(){
+    hideAll();
+    document.getElementById("year2025").style.display="block";
+}
+
+function open2026(){
+    hideAll();
+    document.getElementById("year2026").style.display="block";
+
+    canvas.style.display = "block";
+    createFirework();
+    setInterval(createFirework, 800);
+    animateFireworks();
+}
+
+
+function go2025(){
+    open2025();
+}
+
+function go2026(){
+    open2026();
+}
+
+function nextSlide(){
+    slides2025[index].classList.remove("active");
+    index = (index + 1) % slides2025.length;
+    slides2025[index].classList.add("active");
+}
+
+function hideAll(){
+    document.getElementById("cover").style.display="none";
+    document.getElementById("year2025").style.display="none";
+    document.getElementById("year2026").style.display="none";
+}
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function createFirework() {
+    let x = random(100, canvas.width - 100);
+    let y = random(100, canvas.height / 2);
+    for (let i = 0; i < 40; i++) {
+        particles.push({
+            x,
+            y,
+            angle: random(0, Math.PI * 2),
+            speed: random(2, 6),
+            alpha: 1
+        });
+    }
+}
+
+function animateFireworks() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+        p.x += Math.cos(p.angle) * p.speed;
+        p.y += Math.sin(p.angle) * p.speed;
+        p.alpha -= 0.02;
+
+        ctx.fillStyle = `rgba(255, 100, 150, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (p.alpha <= 0) particles.splice(i, 1);
+    });
+    requestAnimationFrame(animateFireworks);
+}
+
+</script>
+</body>
+</html>
