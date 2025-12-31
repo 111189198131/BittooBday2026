@@ -14,7 +14,10 @@
   <h2 class="shake-text">December Theory is <span>Real ✨</span></h2>
   <p class="shake-text">“कुछ ख़त्म होना ज़रूरी था,<br>कुछ शुरू होने से पहले”</p>
 </div>
-        <p class="shake-text">⬅ 2025 Memories | 2026 Dreams ➡</p>
+        <div class="newyear-line">
+  “हर साल नया नहीं चाहिए,<br>
+  बस तुम — हर साल।”
+</div>
         <div class="choice">
   <button onclick="open2026()"
     style="
@@ -196,6 +199,32 @@ img{
   from {
     opacity: 0;
     transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.newyear-line {
+  margin: 18px 0 22px;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(135deg, #ffb703, #ffd1e8, #ff4f8b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 12px rgba(255,120,160,0.4);
+  font-family: "Noto Sans Devanagari", "Mangal", Arial, sans-serif;
+  animation: fadeSoft 2s ease;
+}
+
+@keyframes fadeSoft {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -413,6 +442,7 @@ function animateFireworks() {
 </script>
 </body>
 </html>
+
 
 
 
