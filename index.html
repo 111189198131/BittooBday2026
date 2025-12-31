@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="hearts"></div>
 <canvas id="fireworks"></canvas>
 
 <div class="container">
@@ -47,12 +48,21 @@
 body{
     margin:0;
     height:100vh;
-    background:linear-gradient(to right,#ff758c,#ff7eb3);
+    background: linear-gradient(-45deg,#ff758c,#ff7eb3,#ffd1e8,#ff4f8b);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
     display:flex;
     justify-content:center;
     align-items:center;
     font-family:'Segoe UI';
 }
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .container{
     width:90%;
@@ -230,6 +240,25 @@ img{
     opacity: 1;
     transform: translateY(0);
   }
+}
+.hearts::before,
+.hearts::after{
+    content:"💖";
+    position: fixed;
+    font-size: 28px;
+    opacity: 0.4;
+    animation: floatHearts 8s infinite linear;
+}
+
+.hearts::after{
+    content:"✨";
+    left: 70%;
+    animation-duration: 10s;
+}
+
+@keyframes floatHearts {
+    0% { top: 100%; transform: scale(0.8); }
+    100% { top: -10%; transform: scale(1.2); }
 }
 
 </style>
@@ -442,6 +471,7 @@ function animateFireworks() {
 </script>
 </body>
 </html>
+
 
 
 
