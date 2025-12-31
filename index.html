@@ -125,43 +125,64 @@ img{
     from { color: #ff5e78; }
     to { color: #ff1493; }
 }
+.shake-text{
+    font-size: 22px;
+    animation: shake 2s infinite;
+}
 
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+    .float-text{
+    font-size: 22px;
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
 </style>
 
     </div>
 
     <!-- 2025 -->
     <div id="year2025" class="card">
-        <h1> Our Memories 💕</h1>
+        <h1 class="float-text"> Our Memories 💕</h1>
 
         <div class="slide active">
             <img src="images/m1.jpg">
-            <p><b>Every smile started with you </b>😊</p>
+            <p class="shake-text"><b>Every smile started with you </b>😊</p>
         </div>
 
         <div class="slide">
             <img src="images/m2.jpg">
-            <p><b>Small moments, big love </b>❤️</p>
+            <p class="shake-text"><b>Small moments, big love </b>❤️</p>
         </div>
          <div class="slide">
             <img src="images/m3.jpg">
-            <p><b>Every smile here means the world to me </b>💕</p>
+            <p class="shake-text"><b>Every smile here means the world to me </b>💕</p>
         </div>
          <div class="slide">
             <img src="images/m4.jpg">
-            <p><b>It was always you, in every little moment </b>✨</p>
+            <p class="shake-text"><b>It was always you, in every little moment </b>✨</p>
         </div>
          <div class="slide">
             <img src="images/m5.jpg">
-            <p><b>Simple days, beautiful memories </b>🌸</p>
+            <p class="shake-text"><b>Simple days, beautiful memories </b>🌸</p>
         </div>
      <div class="slide">
             <img src="images/m6.jpg">
-            <p><b>With you, even the ordinary felt special </b>❤️</p>
+            <p class="shake-text"><b>With you, even the ordinary felt special </b>❤️</p>
         </div>
         <div class="slide">
             <img src="images/m7.jpg">
-            <p><b>Best year because of you </b>🙌❤️🌸</p>
+            <p class="shake-text"><b>Best year because of you </b>🙌❤️🌸</p>
         </div>
         <div class="choice">
 
@@ -335,6 +356,7 @@ function animateFireworks() {
 </script>
 </body>
 </html>
+
 
 
 
