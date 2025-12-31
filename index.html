@@ -59,6 +59,7 @@ body{
     justify-content:center;
     align-items:center;
     font-family:'Segoe UI';
+    position: relative;
 }
 
 @keyframes bgMove {
@@ -309,12 +310,12 @@ img{
     line-height: 1.1;
     letter-spacing: 3px;
 
-    color: rgba(255,255,255,0.08);   /* transparent text */
-
+    color: rgba(255,255,255,0.14);  
     text-transform: uppercase;
     pointer-events: none;
     user-select: none;
-    z-index: 0;
+
+    z-index: 1;   
 }
 
 /* tablet + mobile ke liye responsive */
@@ -554,6 +555,7 @@ setInterval(createHeart, 350);
 </script>
 </body>
 </html>
+
 
 
 
