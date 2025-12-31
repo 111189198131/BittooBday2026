@@ -8,9 +8,12 @@
 <canvas id="fireworks"></canvas>
 
 <div class="container">
-
     <div id="cover">
         <h1>From Memories to Dreams 💝 Bittoo</h1>
+        <div class="december-theory">
+  <h2>December Theory is <span>Real ✨</span></h2>
+  <p>“कुछ ख़त्म होना ज़रूरी था,<br>कुछ शुरू होने से पहले”</p>
+</div>
         <p>⬅ 2025 Memories | 2026 Dreams ➡</p>
         <div class="choice">
   <button onclick="open2026()"
@@ -147,6 +150,46 @@ img{
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0); }
 }
+    .december-theory {
+  margin-top: 25px;
+  text-align: center;
+  animation: fadeUp 2s ease;
+}
+
+.december-theory h2 {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff4f8b, #ffd1e8, #ffb703);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.december-theory h2 span {
+  text-shadow: 0 0 10px rgba(255,79,139,0.6);
+}
+
+.december-theory p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f8f8f8;
+  font-style: italic;
+  line-height: 1.6;
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* soft animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 
     </div>
@@ -357,6 +400,7 @@ function animateFireworks() {
 </script>
 </body>
 </html>
+
 
 
 
