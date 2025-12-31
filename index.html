@@ -10,9 +10,9 @@
     <div class="floating-hearts"></div>
 
 <div class="container">
-    <div class="bg-text">
-  Happy New Year <br> My Bittoo
-</div>
+    <div class="card-outside-text">
+        Happy New Year <br> My Bittoo
+    </div>
     <div id="cover">
         <h1>From Memories to Dreams 💝 Bittoo</h1>
         <div class="december-theory">
@@ -74,6 +74,29 @@ body{
     max-width:420px;
     position: relative;
     z-index: 5;
+}
+.card-outside-text {
+    position: absolute;
+    top: -50px; /* card ke upar thoda space */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+
+    background: linear-gradient(135deg, #ff4f8b, #ffd1e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 12px rgba(255,120,160,0.5);
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+    100% { transform: translateX(-50%) translateY(0); }
 }
 
 #cover,.card{
@@ -559,6 +582,7 @@ setInterval(createHeart, 350);
 </script>
 </body>
 </html>
+
 
 
 
