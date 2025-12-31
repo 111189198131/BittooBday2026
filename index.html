@@ -8,6 +8,9 @@
     <div class="hearts"></div>
 <canvas id="fireworks"></canvas>
     <div class="floating-hearts"></div>
+<div class="bg-text">
+  Happy New Year <br> My Bittoo
+</div>
 
 <div class="container">
     <div id="cover">
@@ -295,6 +298,32 @@ img{
         opacity: 0;
     }
 }
+.bg-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 72px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: 3px;
+
+    color: rgba(255,255,255,0.08);   /* transparent text */
+
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/* tablet + mobile ke liye responsive */
+@media (max-width: 768px) {
+    .bg-text {
+        font-size: 46px;
+        letter-spacing: 2px;
+    }
+}
 
 </style>
 
@@ -525,6 +554,7 @@ setInterval(createHeart, 350);
 </script>
 </body>
 </html>
+
 
 
 
