@@ -368,8 +368,8 @@ img{
 
 <!-- MUSIC -->
 
-<audio id="music" autoplay loop>
-    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kevin_MacLeod/Romantic/Kevin_MacLeod_-_Carefree.mp3" type="audio/mp3">
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mp3">
 </audio>
 
 <!-- MUSIC BUTTON -->
@@ -506,21 +506,13 @@ function toggleMusic(){
 
 /* AUTO MUSIC */
 
-document.body.addEventListener("click", () => {
+window.addEventListener("click",()=>{
 
-    music.play()
-    .then(() => {
+    music.play();
 
-        musicBtn.innerHTML = "🔊";
+    musicBtn.innerHTML = "🔊";
 
-    })
-    .catch((e) => {
-
-        console.log("Autoplay blocked");
-
-    });
-
-}, { once:true });
+},{once:true});
 
 /* TYPING EFFECT */
 
