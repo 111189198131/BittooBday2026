@@ -360,16 +360,16 @@ img{
 
     <p id="liveCountdown"></p>
 
-    <div class="wait-text">
-        “12 baje hi surprise open hoga ✨”
-    </div>
+<div class="wait-text">
+    “The night is waiting for your smile at 12:00 AM 🌙❤️”
+</div>
 
 </div>
 
 <!-- MUSIC -->
 
-<audio id="music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mp3">
+<audio id="music" autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kevin_MacLeod/Romantic/Kevin_MacLeod_-_Carefree.mp3" type="audio/mp3">
 </audio>
 
 <!-- MUSIC BUTTON -->
@@ -506,13 +506,21 @@ function toggleMusic(){
 
 /* AUTO MUSIC */
 
-window.addEventListener("click",()=>{
+document.body.addEventListener("click", () => {
 
-    music.play();
+    music.play()
+    .then(() => {
 
-    musicBtn.innerHTML = "🔊";
+        musicBtn.innerHTML = "🔊";
 
-},{once:true});
+    })
+    .catch((e) => {
+
+        console.log("Autoplay blocked");
+
+    });
+
+}, { once:true });
 
 /* TYPING EFFECT */
 
