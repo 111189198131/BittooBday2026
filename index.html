@@ -1,629 +1,561 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title class="shake-text" >Our Journey ❤️</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="hearts"></div>
-<canvas id="fireworks"></canvas>
-    <div class="floating-hearts"></div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bittoo ❤️</title>
 
-<div class="container">
-    <div class="card-outside-text">
-        Happy New Year <br> My Bittoo
-    </div>
-    <div id="cover">
-        <h1>From Memories to Dreams 💝 Bittoo</h1>
-        <div class="december-theory">
-  <h2 class="shake-text">December Theory is <span>Real ✨</span></h2>
-  <p class="shake-text">“कुछ ख़त्म होना ज़रूरी था,<br>कुछ शुरू होने से पहले”</p>
-</div>
-        <div class="newyear-line">
-  “हर साल नया नहीं चाहिए,<br>
-  बस तुम — हर साल।”
-</div>
-        <div class="choice">
-  <button onclick="open2026()"
-    style="
-      background: radial-gradient(circle at top, #ffd1e8, #ff4f8b);
-      color: white;
-      border: none;
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      font-size: 34px;
-      cursor: pointer;
-      box-shadow: 0 0 25px rgba(255,79,139,0.6);
-      animation: pulse 2s infinite;
-      backdrop-filter: blur(6px);
-    "
-  >
-     ➡
-  </button>
-</div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-@keyframes pulse {
-  0%   { transform: scale(1);   box-shadow: 0 0 25px rgba(255,79,139,0.6); }
-  50%  { transform: scale(1.12); box-shadow: 0 0 45px rgba(255,79,139,0.9); }
-  100% { transform: scale(1);   box-shadow: 0 0 25px rgba(255,79,139,0.6); }
-}
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
     height:100vh;
     background: linear-gradient(-45deg,#ff758c,#ff7eb3,#ffd1e8,#ff4f8b);
-    background-size: 400% 400%;
-    animation: bgMove 12s ease infinite;
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Segoe UI';
-    position: relative;
+    position:relative;
 }
 
-@keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+/* BACKGROUND */
 
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
 .container{
     width:90%;
-    max-width:420px;
-    position: relative;
-    z-index: 5;
-}
-.card-outside-text {
-    position: absolute;
-    top: -50px; 
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.2;
-
-    background: linear-gradient(135deg, #ff4f8b, #ffd1e8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 0 12px rgba(255,120,160,0.5);
-    animation: floatText 3s ease-in-out infinite;
-}
-
-@keyframes floatText {
-    0% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-6px); }
-    100% { transform: translateX(-50%) translateY(0); }
-}
-
-#cover,.card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+    max-width:430px;
+    position:relative;
+    z-index:5;
 }
 
 .card{
-    display:none;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:25px;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 10px 35px rgba(0,0,0,0.25);
+    animation:fadeUp 1s ease;
 }
 
-.choice button{
-    font-size:22px;
-    padding:12px 25px;
-    margin:10px;
-    border:none;
-    border-radius:15px;
-    background:#ff5e78;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1,h2{
     color:white;
+    text-shadow:0 0 15px rgba(255,255,255,0.4);
 }
 
-.slide,.slide2026{
+.title{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.quote{
+    margin-top:15px;
+    color:white;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.glow{
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #fff;
+    }
+    to{
+        text-shadow:0 0 25px #ffb3d1;
+    }
+}
+
+/* BUTTON */
+
+button{
+    margin-top:20px;
+    border:none;
+    padding:14px 25px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#ff4f8b,#ff9ac1);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 18px rgba(255,79,139,0.35);
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* SLIDES */
+
+.slide{
     display:none;
 }
 
-.slide.active,.slide2026.active{
+.slide.active{
     display:block;
 }
 
 img{
     width:100%;
-    border-radius:15px;
+    border-radius:18px;
     margin-top:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
+
+/* FLOATING HEARTS */
+
+.floating-hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.floating-hearts span{
+    position:absolute;
+    bottom:-40px;
+    font-size:24px;
+    animation:floatUp linear infinite;
+    opacity:0.7;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(0.7);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* FIREWORKS */
+
+#fireworks{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:none;
+    background:white;
+    font-size:22px;
+    cursor:pointer;
+    z-index:20;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    margin-top:18px;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+}
+
+/* LOVE LETTER */
+
+.letter{
+    margin-top:18px;
+    color:white;
+    line-height:1.8;
+    min-height:90px;
+}
+
+/* FINAL TEXT */
 
 .end{
-    margin-top:15px;
+    margin-top:18px;
+    color:white;
     font-size:18px;
-    color:#ff5e78;
-}
-/* Fireworks canvas */
-#fireworks {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    display: none;
-    z-index: 1;
+    line-height:1.8;
 }
 
-/* Card hover animation */
-.card {
-    transition: all 0.4s ease;
-}
+/* RESPONSIVE */
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    background: linear-gradient(135deg, #fff0f5, #ffe6f0);
-}
+@media(max-width:768px){
 
-/* 2026 glow effect */
-#year2026 h2 {
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from { color: #ff5e78; }
-    to { color: #ff1493; }
-}
-.shake-text{
-    font-size: 22px;
-    animation: shake 2s infinite;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-3px); }
-    50% { transform: translateX(3px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(0); }
-}
-    .float-text{
-    font-size: 22px;
-    animation: floatText 3s ease-in-out infinite;
-}
-
-@keyframes floatText {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
-    .december-theory {
-  margin-top: 25px;
-  text-align: center;
-  animation: fadeUp 2s ease;
-}
-
-.december-theory h2 {
-  font-size: 22px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #ff4f8b, #ffd1e8, #ffb703);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-}
-
-.december-theory h2 span {
-  text-shadow: 0 0 10px rgba(255,79,139,0.6);
-}
-
-.december-theory p {
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.7;
-
-  background: linear-gradient(
-    135deg,
-    #ffd1e8,
-    #ff9ac1,
-    #ffb703,
-    #90dbd1
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 0 10px rgba(255,180,200,0.4);
-  font-family: "Noto Sans Devanagari", "Mangal", Arial, sans-serif;
-  animation: glowFade 3s ease-in-out infinite alternate;
-}
-
-
-/* soft animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.newyear-line {
-  margin: 18px 0 22px;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.5px;
-
-  background: linear-gradient(135deg, #ffb703, #ffd1e8, #ff4f8b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 0 12px rgba(255,120,160,0.4);
-  font-family: "Noto Sans Devanagari", "Mangal", Arial, sans-serif;
-  animation: fadeSoft 2s ease;
-}
-
-@keyframes fadeSoft {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.hearts::before,
-.hearts::after{
-    content:"💖";
-    position: fixed;
-    font-size: 28px;
-    opacity: 0.4;
-    animation: floatHearts 8s infinite linear;
-}
-
-.hearts::after{
-    content:"✨";
-    left: 70%;
-    animation-duration: 10s;
-}
-
-@keyframes floatHearts {
-    0% { top: 100%; transform: scale(0.8); }
-    100% { top: -10%; transform: scale(1.2); }
-}
-
-    .floating-hearts {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.floating-hearts span {
-    position: absolute;
-    bottom: -40px;
-    font-size: 22px;
-    opacity: 0.5;
-    animation: floatUp linear infinite;
-}
-
-/* animation */
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(0.8);
-        opacity: 0;
+    .title{
+        font-size:24px;
     }
-    20% {
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateY(-120vh) scale(1.3);
-        opacity: 0;
-    }
-}
-.bg-text {
-    position: fixed;
-    top: 20%; 
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 60px; 
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.1;
-    letter-spacing: 2px;
 
-    color: rgba(255,255,255,0.15); 
-    text-transform: uppercase;
-    pointer-events: none;
-    user-select: none;
+    .quote{
+        font-size:15px;
+    }
 
-    z-index: 0;   
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff5e78, 0 0 30px #ff4f8b; 
+    button{
+        width:100%;
+    }
+
 }
 
-
-/* tablet + mobile responsive */
-@media (max-width: 768px) {
-    .bg-text {
-        font-size: 46px;
-        letter-spacing: 2px;
-    }
-}
 </style>
-    </div>
-    <!-- 2025 -->
-    <div id="year2025" class="card">
-        <h1 class="shake-text"> Our Memories 💕</h1>
+</head>
 
-        <div class="slide active">
-            <img src="images/m1.jpg">
-            <p class="shake-text"><b>Every smile started with you </b>😊</p>
-        </div>
-   <div class="slide">
-            <img src="images/k1.jpg">
-        <p class="shake-text"><b>Every day feels warmer with you</b> ☀️</p>
-        </div>
-        <div class="slide">
-            <img src="images/m2.jpg">
-            <p class="shake-text"><b>Small moments, big love </b>❤️</p>
-        </div>
-           <div class="slide">
-            <img src="images/k2.jpg">
-         <p class="shake-text"><b>Love looks like you</b> ✨</p>
-        </div>
-         <div class="slide">
-            <img src="images/m3.jpg">
-            <p class="shake-text"><b>Every smile here means the world to me </b>💕</p>
-        </div>
-          <div class="slide">
-            <img src="images/k3.jpg">
-       <p class="shake-text"><b>Love in a small frame</b> 📸</p>
-        </div>
-         <div class="slide">
-            <img src="images/m4.jpg">
-          <p class="shake-text"><b>My Bittoo, my smile</b> ❤️</p>
-        </div>
-             <div class="slide">
-            <img src="images/k4.jpg">
-           <p class="shake-text"><b>Captured with my heart</b> 💖</p>
-        </div>
-         <div class="slide">
-            <img src="images/m5.jpg">
-            <p class="shake-text"><b>Simple days, beautiful memories </b>🌸</p>
-        </div>
-          <div class="slide">
-            <img src="images/k5.jpg">
-    <p class="shake-text"><b>This frame feels warm</b> ☀️</p>
-        </div>
-     <div class="slide">
-            <img src="images/m6.jpg">
-      <p class="shake-text"><b>Bittoo makes it beautiful</b> ❤️</p>
-        </div>
-        <div class="slide">
-            <img src="images/m7.jpg">
-            <p class="shake-text"><b>Best year because of you </b>🙌❤️🌸</p>
-        </div>
-        <div class="choice">
+<body>
 
-<button onclick="nextSlide()"
-  style="
-    background: linear-gradient(135deg, #2ec4b6, #90dbd1);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 6px 16px rgba(46,196,182,0.35);
-    transition: all 0.3s ease;
-  "
-  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 20px rgba(46,196,182,0.45)'"
-  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(46,196,182,0.35)'"
->
-   <span style="font-size:18px;">⬅️</span>
-  Next Memory
-</button>
-<br><br>
-<button onclick="go2026()"
-  style="
-    background: linear-gradient(135deg, #7b2ff7, #f107a3);
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 10px 24px rgba(123,47,247,0.4);
-    transition: all 0.35s ease;
-  "
-  onmouseover="
-    this.style.transform='translateY(-4px) scale(1.03)';
-    this.style.boxShadow='0 16px 32px rgba(123,47,247,0.55)';
-  "
-  onmouseout="
-    this.style.transform='translateY(0) scale(1)';
-    this.style.boxShadow='0 10px 24px rgba(123,47,247,0.4)';
-  "
->
-  Go to 2026 ➡✨
-</button>
-</div>
-    </div>
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
 
-    <!-- 2026 -->
-    <div id="year2026" class="card">
-        <h2 class="shake-text">Welcome 2026, My Bitto 🌟❤️</h2>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
 
-        <div class="slide2026 active">
-            <img src="images/f1.jpg">
-            <p class="shake-text"><b>New year, New dreams same love</b> 💖</p>
-        </div>
+<canvas id="fireworks"></canvas>
 
-        <div class="slide2026">
-            <img src="images/f2.jpg">
-            <p class="shake-text">More dreams, more us ✨</p>
-        </div>
+<div class="floating-hearts"></div>
 
-        <p class="end"><b>No matter the year,<br>it’s always YOU </b>❤️</p>
-            <div class="choice">
-  <button onclick="open2025()"
-    style="
-      background: linear-gradient(135deg, #ff5f8d, #ff8fb3);
-      color: white;
-      border: none;
-      padding: 14px 26px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(255, 95, 141, 0.35);
-      transition: all 0.3s ease;
-    "
-    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(255,95,141,0.45)'"
-    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(255,95,141,0.35)'"
-  >
-    <span>⟪ ✨ Let’s rewind to our unforgettable 2025 memories ✨ ⟫</span>
-  </button>
+<div class="container">
+
+<!-- COVER -->
+
+<div id="cover" class="card">
+
+    <h1 class="title glow">
+        Happy Birthday <br> Meri Pyaari Bittoo 🎂❤️
+    </h1>
+
+    <p class="quote">
+        “आज का दिन बहुत खास है,<br>
+        क्योंकि आज तुम इस दुनिया में आई थी 💖”
+    </p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="letter" id="typing"></div>
+
+    <button onclick="openMemories()">
+        Open Birthday Surprise ✨
+    </button>
+
 </div>
 
+<!-- MEMORIES -->
+
+<div id="memories" class="card" style="display:none;">
+
+    <h2 class="glow">
+        Our Beautiful Memories 💕
+    </h2>
+
+    <div class="slide active">
+        <img src="images/m1.jpg">
+        <p class="quote"><b>Your smile is my favorite gift 🎂</b></p>
     </div>
+
+    <div class="slide">
+        <img src="images/m2.jpg">
+        <p class="quote"><b>Every moment with you feels magical ✨</b></p>
+    </div>
+
+    <div class="slide">
+        <img src="images/m3.jpg">
+        <p class="quote"><b>My favorite person ❤️</b></p>
+    </div>
+
+    <div class="slide">
+        <img src="images/m4.jpg">
+        <p class="quote"><b>You make everything beautiful 🌸</b></p>
+    </div>
+
+    <div class="slide">
+        <img src="images/m5.jpg">
+        <p class="quote"><b>Birthday queen 👑💖</b></p>
+    </div>
+
+    <button onclick="nextSlide()">
+        Next Memory 🎂
+    </button>
+
+    <button onclick="openFinal()">
+        Final Surprise ❤️
+    </button>
+
+</div>
+
+<!-- FINAL -->
+
+<div id="final" class="card" style="display:none;">
+
+    <h1 class="glow">
+        Happiest Birthday Bittoo 🎂✨
+    </h1>
+
+    <img src="images/f1.jpg">
+
+    <p class="end">
+        No matter how many birthdays come,<br>
+        You will always be my favorite person ❤️
+        <br><br>
+        I just want your smile forever 💖
+    </p>
+
+    <button onclick="showPopup()">
+        One Last Message 💌
+    </button>
+
+</div>
 
 </div>
 
 <script>
-let slides2025 = document.querySelectorAll("#year2025 .slide");
+
+/* MUSIC */
+
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+
+}
+
+/* TYPING EFFECT */
+
+const text = "You are the most beautiful part of my life ❤️";
+let i = 0;
+
+function typingEffect(){
+
+    if(i < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typingEffect,60);
+    }
+
+}
+
+typingEffect();
+
+/* OPEN PAGES */
+
+function openMemories(){
+
+    document.getElementById("cover").style.display="none";
+    document.getElementById("memories").style.display="block";
+
+}
+
+function openFinal(){
+
+    document.getElementById("memories").style.display="none";
+    document.getElementById("final").style.display="block";
+
+    createFirework();
+
+    setInterval(createFirework,700);
+
+    animateFireworks();
+
+}
+
+/* SLIDES */
+
+let slides = document.querySelectorAll(".slide");
+
 let index = 0;
 
-function open2025(){
-    hideAll();
-    document.getElementById("year2025").style.display="block";
-}
-
-function open2026(){
-    hideAll();
-    document.getElementById("year2026").style.display="block";
-
-    canvas.style.display = "block";
-    createFirework();
-    setInterval(createFirework, 800);
-    animateFireworks();
-}
-
-
-function go2025(){
-    open2025();
-}
-
-function go2026(){
-    open2026();
-}
-
 function nextSlide(){
-    slides2025[index].classList.remove("active");
-    index = (index + 1) % slides2025.length;
-    slides2025[index].classList.add("active");
+
+    slides[index].classList.remove("active");
+
+    index = (index + 1) % slides.length;
+
+    slides[index].classList.add("active");
+
 }
 
-function hideAll(){
-    document.getElementById("cover").style.display="none";
-    document.getElementById("year2025").style.display="none";
-    document.getElementById("year2026").style.display="none";
+/* HEARTS */
+
+const heartContainer = document.querySelector(".floating-hearts");
+
+function createHeart(){
+
+    const heart = document.createElement("span");
+
+    heart.innerHTML = Math.random() > 0.5 ? "💖" : "✨";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    heart.style.fontSize = (18 + Math.random() * 25) + "px";
+
+    heartContainer.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },10000);
+
 }
+
+setInterval(createHeart,300);
+
+/* FIREWORKS */
+
 const canvas = document.getElementById("fireworks");
+
 const ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
+
 canvas.height = window.innerHeight;
 
 let particles = [];
 
-function random(min, max) {
+function random(min,max){
+
     return Math.random() * (max - min) + min;
+
 }
 
-function createFirework() {
-    let x = random(100, canvas.width - 100);
-    let y = random(100, canvas.height / 2);
-    for (let i = 0; i < 40; i++) {
+function createFirework(){
+
+    let x = random(100,canvas.width - 100);
+
+    let y = random(100,canvas.height / 2);
+
+    for(let i=0;i<40;i++){
+
         particles.push({
+
             x,
             y,
-            angle: random(0, Math.PI * 2),
-            speed: random(2, 6),
-            alpha: 1
+            angle:random(0,Math.PI*2),
+            speed:random(2,6),
+            alpha:1
+
         });
+
     }
+
 }
 
-function animateFireworks() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p, i) => {
+function animateFireworks(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach((p,index)=>{
+
         p.x += Math.cos(p.angle) * p.speed;
+
         p.y += Math.sin(p.angle) * p.speed;
+
         p.alpha -= 0.02;
 
-        ctx.fillStyle = `rgba(255, 100, 150, ${p.alpha})`;
+        ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+
+        ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
         ctx.fill();
 
-        if (p.alpha <= 0) particles.splice(i, 1);
+        if(p.alpha <= 0){
+
+            particles.splice(index,1);
+
+        }
+
     });
+
     requestAnimationFrame(animateFireworks);
-}
-const heartContainer = document.querySelector(".floating-hearts");
 
-function createHeart() {
-    const heart = document.createElement("span");
-    heart.innerHTML = Math.random() > 0.5 ? "💖" : "✨";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-    heart.style.fontSize = (16 + Math.random() * 20) + "px";
-
-    heartContainer.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 12000);
 }
 
-/* hearts continuously */
-setInterval(createHeart, 350);
+/* COUNTDOWN */
+
+const birthday = new Date("May 25, 2026 00:00:00").getTime();
+
+const countdown = document.getElementById("countdown");
+
+setInterval(()=>{
+
+    const now = new Date().getTime();
+
+    const gap = birthday - now;
+
+    const days = Math.floor(gap / (1000*60*60*24));
+
+    const hours = Math.floor((gap % (1000*60*60*24)) / (1000*60*60));
+
+    const minutes = Math.floor((gap % (1000*60*60)) / (1000*60));
+
+    countdown.innerHTML =
+        `🎂 ${days}d ${hours}h ${minutes}m left for your special day`;
+
+},1000);
+
+/* POPUP */
+
+function showPopup(){
+
+    alert("Happy Birthday Meri Bittoo ❤️\n\nI Love You Forever 💖");
+
+}
 
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
