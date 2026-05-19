@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Bittoo ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
 body{
     overflow:hidden;
     height:100vh;
-    background: linear-gradient(-45deg,#ff758c,#ff7eb3,#ffd1e8,#ff4f8b);
+    background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffd1e8,#ff4f8b);
     background-size:400% 400%;
     animation:bgMove 12s ease infinite;
     display:flex;
@@ -28,13 +30,129 @@ body{
     position:relative;
 }
 
-/* BACKGROUND */
-
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
+
+/* LOCK SCREEN */
+
+#lockScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(180deg,#120018,#2b1055,#7597de);
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.moon{
+    position:absolute;
+    top:70px;
+    right:70px;
+    font-size:70px;
+    animation:moonFloat 4s ease-in-out infinite;
+}
+
+@keyframes moonFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.cartoon{
+    font-size:120px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+
+}
+
+#lockScreen h1{
+    color:white;
+    margin-top:20px;
+    font-size:30px;
+    text-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+#liveCountdown{
+    margin-top:18px;
+    color:#ffd1e8;
+    font-size:32px;
+    font-weight:700;
+    text-shadow:0 0 15px rgba(255,255,255,0.4);
+}
+
+.wait-text{
+    margin-top:18px;
+    color:white;
+    font-size:18px;
+    opacity:0.9;
+}
+
+#lockScreen::before{
+    content:"✨ ✨ ✨ ✨ ✨ ✨ ✨";
+    position:absolute;
+    top:15%;
+    left:10%;
+    font-size:28px;
+    animation:stars 6s linear infinite;
+}
+
+@keyframes stars{
+
+    0%{
+        opacity:0.4;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0.4;
+    }
+
+}
+
+/* CARD */
 
 .container{
     width:90%;
@@ -45,77 +163,45 @@ body{
 
 .card{
     background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(15px);
     border:1px solid rgba(255,255,255,0.25);
     padding:25px;
     border-radius:28px;
     text-align:center;
     box-shadow:0 10px 35px rgba(0,0,0,0.25);
-    animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-h1,h2{
-    color:white;
-    text-shadow:0 0 15px rgba(255,255,255,0.4);
 }
 
 .title{
+    color:white;
     font-size:28px;
-    margin-bottom:10px;
+    line-height:1.4;
+    text-shadow:0 0 20px rgba(255,255,255,0.5);
 }
 
 .quote{
-    margin-top:15px;
+    margin-top:18px;
     color:white;
     font-size:16px;
-    line-height:1.7;
+    line-height:1.8;
 }
-
-.glow{
-    animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-    from{
-        text-shadow:0 0 10px #fff;
-    }
-    to{
-        text-shadow:0 0 25px #ffb3d1;
-    }
-}
-
-/* BUTTON */
 
 button{
     margin-top:20px;
     border:none;
-    padding:14px 25px;
-    border-radius:40px;
+    padding:14px 24px;
+    border-radius:35px;
     background:linear-gradient(135deg,#ff4f8b,#ff9ac1);
     color:white;
     font-size:16px;
     font-weight:600;
     cursor:pointer;
     transition:0.3s;
-    box-shadow:0 8px 18px rgba(255,79,139,0.35);
+    box-shadow:0 8px 18px rgba(255,79,139,0.4);
 }
 
 button:hover{
     transform:translateY(-4px) scale(1.03);
 }
-
-/* SLIDES */
 
 .slide{
     display:none;
@@ -129,10 +215,10 @@ img{
     width:100%;
     border-radius:18px;
     margin-top:15px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    box-shadow:0 10px 22px rgba(0,0,0,0.2);
 }
 
-/* FLOATING HEARTS */
+/* HEARTS */
 
 .floating-hearts{
     position:fixed;
@@ -140,8 +226,8 @@ img{
     height:100%;
     top:0;
     left:0;
-    pointer-events:none;
     overflow:hidden;
+    pointer-events:none;
     z-index:1;
 }
 
@@ -149,13 +235,14 @@ img{
     position:absolute;
     bottom:-40px;
     font-size:24px;
-    animation:floatUp linear infinite;
     opacity:0.7;
+    animation:floatUp linear infinite;
 }
 
 @keyframes floatUp{
+
     0%{
-        transform:translateY(0) scale(0.7);
+        transform:translateY(0) scale(0.8);
         opacity:0;
     }
 
@@ -167,16 +254,17 @@ img{
         transform:translateY(-120vh) scale(1.4);
         opacity:0;
     }
+
 }
 
 /* FIREWORKS */
 
 #fireworks{
     position:fixed;
-    width:100%;
-    height:100%;
     top:0;
     left:0;
+    width:100%;
+    height:100%;
     pointer-events:none;
     z-index:0;
 }
@@ -187,44 +275,48 @@ img{
     position:fixed;
     top:20px;
     right:20px;
-    width:55px;
-    height:55px;
+    width:58px;
+    height:58px;
     border-radius:50%;
     border:none;
     background:white;
-    font-size:22px;
+    font-size:24px;
     cursor:pointer;
-    z-index:20;
+    z-index:10000;
 }
 
-/* COUNTDOWN */
-
-.countdown{
-    margin-top:18px;
-    color:white;
-    font-size:17px;
-    font-weight:600;
-}
-
-/* LOVE LETTER */
+/* LETTER */
 
 .letter{
     margin-top:18px;
     color:white;
     line-height:1.8;
     min-height:90px;
+    font-size:16px;
 }
-
-/* FINAL TEXT */
 
 .end{
-    margin-top:18px;
+    margin-top:20px;
     color:white;
+    line-height:1.9;
     font-size:18px;
-    line-height:1.8;
 }
 
-/* RESPONSIVE */
+.glow{
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #fff;
+    }
+
+    to{
+        text-shadow:0 0 24px #ffd1e8;
+    }
+
+}
 
 @media(max-width:768px){
 
@@ -232,12 +324,17 @@ img{
         font-size:24px;
     }
 
-    .quote{
-        font-size:15px;
-    }
-
     button{
         width:100%;
+    }
+
+    .cartoon{
+        font-size:90px;
+    }
+
+    #lockScreen h1{
+        font-size:24px;
+        padding:0 20px;
     }
 
 }
@@ -247,13 +344,45 @@ img{
 
 <body>
 
+<!-- LOCK SCREEN -->
+
+<div id="lockScreen">
+
+    <div class="moon">🌙</div>
+
+    <div class="cartoon">
+        🧸
+    </div>
+
+    <h1>
+        Bro is waiting for your Birthday 💖
+    </h1>
+
+    <p id="liveCountdown"></p>
+
+    <div class="wait-text">
+        “12 baje hi surprise open hoga ✨”
+    </div>
+
+</div>
+
+<!-- MUSIC -->
+
 <audio id="music" loop>
-    <source src="music.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mp3">
 </audio>
 
-<button class="music-btn" onclick="toggleMusic()">🎵</button>
+<!-- MUSIC BUTTON -->
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+    🎵
+</button>
+
+<!-- FIREWORKS -->
 
 <canvas id="fireworks"></canvas>
+
+<!-- HEARTS -->
 
 <div class="floating-hearts"></div>
 
@@ -264,15 +393,14 @@ img{
 <div id="cover" class="card">
 
     <h1 class="title glow">
-        Happy Birthday <br> Meri Pyaari Bittoo 🎂❤️
+        Happy Birthday <br>
+        Meri Pyaari Bittoo 🎂❤️
     </h1>
 
     <p class="quote">
         “आज का दिन बहुत खास है,<br>
         क्योंकि आज तुम इस दुनिया में आई थी 💖”
     </p>
-
-    <div class="countdown" id="countdown"></div>
 
     <div class="letter" id="typing"></div>
 
@@ -286,7 +414,7 @@ img{
 
 <div id="memories" class="card" style="display:none;">
 
-    <h2 class="glow">
+    <h2 class="title glow">
         Our Beautiful Memories 💕
     </h2>
 
@@ -329,7 +457,7 @@ img{
 
 <div id="final" class="card" style="display:none;">
 
-    <h1 class="glow">
+    <h1 class="title glow">
         Happiest Birthday Bittoo 🎂✨
     </h1>
 
@@ -356,19 +484,40 @@ img{
 
 const music = document.getElementById("music");
 
+const musicBtn = document.getElementById("musicBtn");
+
 function toggleMusic(){
 
     if(music.paused){
+
         music.play();
+
+        musicBtn.innerHTML = "🔊";
+
     }else{
+
         music.pause();
+
+        musicBtn.innerHTML = "🎵";
+
     }
 
 }
 
+/* AUTO MUSIC */
+
+window.addEventListener("click",()=>{
+
+    music.play();
+
+    musicBtn.innerHTML = "🔊";
+
+},{once:true});
+
 /* TYPING EFFECT */
 
 const text = "You are the most beautiful part of my life ❤️";
+
 let i = 0;
 
 function typingEffect(){
@@ -380,6 +529,7 @@ function typingEffect(){
         i++;
 
         setTimeout(typingEffect,60);
+
     }
 
 }
@@ -390,15 +540,17 @@ typingEffect();
 
 function openMemories(){
 
-    document.getElementById("cover").style.display="none";
-    document.getElementById("memories").style.display="block";
+    document.getElementById("cover").style.display = "none";
+
+    document.getElementById("memories").style.display = "block";
 
 }
 
 function openFinal(){
 
-    document.getElementById("memories").style.display="none";
-    document.getElementById("final").style.display="block";
+    document.getElementById("memories").style.display = "none";
+
+    document.getElementById("final").style.display = "block";
 
     createFirework();
 
@@ -438,7 +590,7 @@ function createHeart(){
 
     heart.style.animationDuration = (5 + Math.random() * 5) + "s";
 
-    heart.style.fontSize = (18 + Math.random() * 25) + "px";
+    heart.style.fontSize = (18 + Math.random() * 24) + "px";
 
     heartContainer.appendChild(heart);
 
@@ -524,26 +676,42 @@ function animateFireworks(){
 
 }
 
-/* COUNTDOWN */
+/* MIDNIGHT LOCK */
 
-const birthday = new Date("May 25, 2026 00:00:00").getTime();
+const unlockDate = new Date("May 20, 2026 00:00:00").getTime();
 
-const countdown = document.getElementById("countdown");
+const liveCountdown = document.getElementById("liveCountdown");
+
+const lockScreen = document.getElementById("lockScreen");
 
 setInterval(()=>{
 
     const now = new Date().getTime();
 
-    const gap = birthday - now;
+    const gap = unlockDate - now;
 
-    const days = Math.floor(gap / (1000*60*60*24));
+    if(gap <= 0){
+
+        lockScreen.style.display = "none";
+
+        createFirework();
+
+        setInterval(createFirework,700);
+
+        animateFireworks();
+
+        return;
+
+    }
 
     const hours = Math.floor((gap % (1000*60*60*24)) / (1000*60*60));
 
     const minutes = Math.floor((gap % (1000*60*60)) / (1000*60));
 
-    countdown.innerHTML =
-        `🎂 ${days}d ${hours}h ${minutes}m left for your special day`;
+    const seconds = Math.floor((gap % (1000*60)) / 1000);
+
+    liveCountdown.innerHTML =
+    `${hours}h ${minutes}m ${seconds}s`;
 
 },1000);
 
@@ -551,7 +719,9 @@ setInterval(()=>{
 
 function showPopup(){
 
-    alert("Happy Birthday Meri Bittoo ❤️\n\nI Love You Forever 💖");
+    alert(
+        "Happy Birthday Meri Bittoo ❤️\n\nI Love You Forever 💖"
+    );
 
 }
 
